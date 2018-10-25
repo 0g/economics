@@ -38,22 +38,24 @@ else:
 # divide by price coefficient to isolate the P variable...
 vertical_intercept = new_total / price_coefficient
 horizontal_intercept = total
+
 print('\nVertical Intercept: ' + str(vertical_intercept))
 print('Horizontal Intercept: ' + str(horizontal_intercept) + '\n')
 
 # find price that will provide max revenue...
-minimum = .00001
+price = .00001
 total_rev = 0
-last_price = 0
+last_rev = 0
+
 while True:
-    price_level = minimum * price_coefficient
-    fixed_total = total + price_level
-    total_rev = minimum * fixed_total
-    if total_rev < last_price:
-        best_price = minimum - .00001
+    price_variable = price * price_coefficient
+    quantity_demanded = total + price_variable
+    total_rev = price * quantity_demanded
+    if total_rev < last_rev:
+        best_price = price - .00001
         break
     else:
-        last_price = total_rev
-        minimum += .00001
+        last_rev = total_rev
+        price += .00001
 
 print('Best Price: ' + str(best_price) + '\n')
