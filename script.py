@@ -1,6 +1,6 @@
-# introduction
+# introduction...
 print('\nWelcome to the Maximum Revenue Finder by Patrick Cash')
-print('This was developed to solve a tricky bonus Econ question\n')
+print('This was developed to solve a tricky bonus economics question\n')
 
 # declare some variables...
 factors = {}
@@ -12,7 +12,6 @@ price_coefficient = float(input('Please provide the price coefficient: '))
 values.append(intercept)
 
 # add on as many factors as needed...
-
 while True:
     a = input('Please enter another coefficient, if none type "none": ')
     if a == 'none':
@@ -29,7 +28,7 @@ for k, v in factors.items():
 # add all factors together...
 total = sum(values)
 
-# move constant to otherside of equation...
+# rearrange the equation...
 if total < 0:
     new_total = abs(total)
 else:
@@ -39,6 +38,7 @@ else:
 vertical_intercept = new_total / price_coefficient
 horizontal_intercept = total
 
+# print the intercepts...
 print('\nVertical Intercept: ' + str(vertical_intercept))
 print('Horizontal Intercept: ' + str(horizontal_intercept) + '\n')
 
